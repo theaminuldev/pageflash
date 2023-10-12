@@ -25,24 +25,25 @@ If you're ready to contribute, follow these steps to get started:
 ```bash
    git clone https://github.com/yourusername/pageflash.git
 ```
--- **1 Create a New Branch:** Create a new branch for your work with a descriptive name:
+### After:
+**1 Create a New Branch:** Create a new branch for your work with a descriptive name:
 
 ```bash
     git checkout -b feature/your-feature
 ```
--- **2 Make Changes:** Make the necessary code changes or documentation updates.
+**2 Make Changes:** Make the necessary code changes or documentation updates.
 
--- **3 Test Your Changes:** Ensure your changes work as expected and do not introduce new issues.
+**3 Test Your Changes:** Ensure your changes work as expected and do not introduce new issues.
 
--- **4 Commit Your Changes:** Commit your changes with a descriptive commit message:
+**4 Commit Your Changes:** Commit your changes with a descriptive commit message:
 ```bash
     git commit -m "Add new feature: your feature description"
 ```
--- **5 Push Your Changes:** Push your changes to your fork:
+**5 Push Your Changes:** Push your changes to your fork:
 ```bash
     git push origin feature/your-feature
 ```
--- **6 Open a Pull Request:** Go to the [PageFlash repository](https://github.com/theaminuldev/pageflash) on GitHub and open a pull request from your fork to the main repository. Provide details about the changes you made and reference any related issues
+**6 Open a Pull Request:** Go to the [PageFlash repository](https://github.com/theaminuldev/pageflash) on GitHub and open a pull request from your fork to the main repository. Provide details about the changes you made and reference any related issues
 
 ## Code Style and Standards
 To maintain code quality and consistency, please adhere to the following guidelines:
