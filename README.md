@@ -4,21 +4,28 @@
 
 ## Overview
 
-**PageFlash** is a powerful headless browser WordPress plugin designed to provide you with a fast and efficient web browsing experience within your WordPress site. Say goodbye to page reloads and enjoy seamless navigation through web content with this plugin. Harness the speed and agility of PageFlash for all your web automation and scraping needs.
+**PageFlash** is a powerful headless browser WordPress plugin designed to provide you with a fast and efficient web browsing experience within your WordPress site. Say goodbye to page reloads and enjoy seamless navigation through web content with this plugin. Harness the speed and agility of PageFlash for your WordPress website.
 
 ## Features & Why Choose PageFlash?
 
 ### Lightning-Fast Browsing:
 PageFlash lives up to its name, offering rapid page loading and navigation without the need for tedious page refreshes.
 
-### Efficient Data Retrieval:
-Fetch web content and data without disruptions, making it ideal for web scraping and automation tasks.
-
 ### Smooth Script Execution: 
-Execute scripts and interact with web pages in a fluid and continuous manner.
+Execute scripts and interact with web pages in a fluid and continuous manner. With PageFlash, you'll experience uninterrupted script execution, ensuring your web applications run seamlessly.
+### Prefetches:
+PageFlash incorporates advanced prefetching technology to speed up your web browsing. It anticipates and loads pages in the background, reducing loading times and providing a smoother browsing experience.
 
 ### No More Reloads:
-Enjoy uninterrupted web exploration, eliminating unnecessary reloads for a streamlined browsing experience.
+Say goodbye to unnecessary page reloads with PageFlash, and enjoy uninterrupted web exploration. PageFlash ensures a frustration-free web experience by eliminating the need for page reloads, providing you with a streamlined and seamless browsing experience.
+
+## How it works
+
+* **Detects links within the viewport** (using [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API))
+* **Waits until the browser is idle** (using [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback))
+* **Checks if the user isn't on a slow connection** (using `navigator.connection.effectiveType`) or has data-saver enabled (using `navigator.connection.saveData`)
+* **Prefetches URLs to the links** (using [`<link rel=prefetch>`](https://www.w3.org/TR/resource-hints/#prefetch) or XHR). Provides some control over the request priority (can switch to `fetch()` if supported).
+
 
 ## Why Choose the Name "PageFlash"?
 
@@ -41,18 +48,17 @@ To install **PageFlash** on your WordPress site, follow these simple steps:
 
 ### Step 1:
 
+1. In your WordPress admin dashboard, go to "Plugins" and click "Add New."
+
+2. Click "Activate."
+
+### Step 2:
+
 1. Download the plugin ZIP file from the [PageFlash WordPress Plugin Page](https://wordpress.org/plugins/pageflash/).
 
 2. Click the "Upload Plugin" button and select the ZIP file you downloaded.
 
 3. Click "Install Now" and then "Activate."
-
-### Step 2:
-
-1. In your WordPress admin dashboard, go to "Plugins" and click "Add New."
-
-2. Click "Activate."
-
 
 ## Usage
 
