@@ -6,16 +6,19 @@
 
 **PageFlash** is a powerful headless browser WordPress plugin designed to provide you with a fast and efficient web browsing experience within your WordPress site. Say goodbye to page reloads and enjoy seamless navigation through web content with this plugin. Harness the speed and agility of PageFlash for all your web automation and scraping needs.
 
-## Features
-## Why Choose PageFlash?
+## Features & Why Choose PageFlash?
 
-- **Lightning-Fast Browsing:** PageFlash lives up to its name, offering rapid page loading and navigation without the need for tedious page refreshes.
+### Lightning-Fast Browsing:
+PageFlash lives up to its name, offering rapid page loading and navigation without the need for tedious page refreshes.
 
-- **Efficient Data Retrieval:** Fetch web content and data without disruptions, making it ideal for web scraping and automation tasks.
+### Efficient Data Retrieval:
+Fetch web content and data without disruptions, making it ideal for web scraping and automation tasks.
 
-- **Smooth Script Execution:** Execute scripts and interact with web pages in a fluid and continuous manner.
+### Smooth Script Execution: 
+Execute scripts and interact with web pages in a fluid and continuous manner.
 
-- **No More Reloads:** Enjoy uninterrupted web exploration, eliminating unnecessary reloads for a streamlined browsing experience.
+### No More Reloads:
+Enjoy uninterrupted web exploration, eliminating unnecessary reloads for a streamlined browsing experience.
 
 ## Why Choose the Name "PageFlash"?
 
@@ -36,7 +39,7 @@ By choosing "PageFlash" as our plugin's name, we aim to convey the message that 
 
 To install **PageFlash** on your WordPress site, follow these simple steps:
 
-### step 1:
+### Step 1:
 
 1. Download the plugin ZIP file from the [PageFlash WordPress Plugin Page](https://wordpress.org/plugins/pageflash/).
 
@@ -44,7 +47,7 @@ To install **PageFlash** on your WordPress site, follow these simple steps:
 
 3. Click "Install Now" and then "Activate."
 
-### step 2:
+### Step 2:
 
 1. In your WordPress admin dashboard, go to "Plugins" and click "Add New."
 
