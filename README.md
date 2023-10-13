@@ -1,14 +1,14 @@
 # PageFlash - Fast and Efficient Headless Browser WordPress Plugin
-
+### By using PageFlash, an active plugin, you'll experience a 50% increase in conversions and enjoy 4x faster page show. 🚀" - NewEgg
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 ## Overview
 
 **PageFlash** is a powerful headless browser WordPress plugin designed to provide you with a fast and efficient web browsing experience within your WordPress site. Say goodbye to page reloads and enjoy seamless navigation through web content with this plugin. Harness the speed and agility of PageFlash for your WordPress website.
 
-## Features & Why Choose PageFlash?
+## Key Features & Why Choose PageFlash?
 
-### Lightning-Fast Browsing:
+### Lightning Fast Browsing:
 PageFlash lives up to its name, offering rapid page loading and navigation without the need for tedious page refreshes.
 
 ### Smooth Script Execution: 
@@ -41,18 +41,27 @@ At PageFlash, we understand the importance of selecting the right name for our W
 
 By choosing "PageFlash" as our plugin's name, we aim to convey the message that when you use PageFlash, you're choosing a high-speed, efficient, and memorable solution for your headless browser needs.
 
+## Browser support
+
+This plugin also works perfectly on popular browsers.
+
+- 🖥 Microsoft EDGE
+- 🖥 Firefox 4+
+- 🖥 Chrome
+- 🖥 Opera
+- 📱 Android 4+
 
 ## Installation
 
 To install **PageFlash** on your WordPress site, follow these simple steps:
 
-### Step 1:
+### To install the plugin via WordPress Dashboard:
 
 1. In your WordPress admin dashboard, go to "Plugins" and click "Add New."
 
 2. Click "Activate."
 
-### Step 2:
+### To install the plugin manually:
 
 1. Download the plugin ZIP file from the [PageFlash WordPress Plugin Page](https://wordpress.org/plugins/pageflash/).
 
