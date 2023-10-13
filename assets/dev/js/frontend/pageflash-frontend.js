@@ -1,0 +1,1 @@
+confirm("Press a button!");
