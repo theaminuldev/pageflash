@@ -6,9 +6,9 @@
 const path = require( 'path' );
 
 const CopyPlugin = require( 'copy-webpack-plugin' );
-const TerserPlugin = require( 'terser-webpack-plugin' );
+const TerserPlugin = require('terser-webpack-plugin');
 
-const copyPluginConfig = new CopyPlugin( {
+const copyPluginConfig = {
 	patterns: [
 		{
 			from: '**/*',
@@ -20,10 +20,10 @@ const copyPluginConfig = new CopyPlugin( {
 				ignore: [
 					'**.zip',
 					'**.css',
-					'**/assets/dev/**',
-					'**/assets/scss/**',
-					'**/assets/js/qunit-tests*',
+					'**/assets/**',
+					// '**/src/js/qunit-tests*',
 					'**/bin/**',
+					'**/src/**',
 					'**/build/**',
 					'**/scripts/**',
 					'**/composer.json',
@@ -41,7 +41,32 @@ const copyPluginConfig = new CopyPlugin( {
 			},
 		},
 	],
-} );
+};
+
+const commonCopyConfig = {
+	patterns: [
+	  {
+		from: 'src/images/', // Source directory
+		to: './images', // Destination directory
+	  },
+	  {
+		from: 'src/libs/', // Source directory
+		to: './libs', // Destination directory
+	  },
+	],
+};
+
+const commonConfig = {
+	patterns: [
+		...commonCopyConfig.patterns, // Merge patterns from commonCopyConfig
+	],
+}
+const mergedConfig = {
+	patterns: [
+	  ...commonCopyConfig.patterns, // Merge patterns from commonCopyConfig
+	  ...copyPluginConfig.patterns, // Merge patterns from copyPluginConfig
+	],
+};
 
 const moduleRules = {
 	rules: [
@@ -67,8 +92,8 @@ const moduleRules = {
 };
 
 const entry = {
-	'pageflash-admin': path.resolve( __dirname, './assets/dev/js/admin/pageflash-admin.js' ),
-	'pageflash-frontend': path.resolve( __dirname, './assets/dev/js/frontend/pageflash-frontend.js' ),
+	'pageflash-admin': path.resolve( __dirname, './src/js/admin/pageflash-admin.js' ),
+	'pageflash-frontend': path.resolve( __dirname, './src/js/frontend/pageflash-frontend.js' ),
 };
 
 const webpackConfig = {
@@ -78,8 +103,8 @@ const webpackConfig = {
 	entry,
 	mode: 'development',
 	output: {
-		path: path.resolve( __dirname, './build/assets/js' ),
-		filename: '[name].js',
+		path: path.resolve( __dirname, './build/assets/' ),
+		filename: 'js/[name].js',
 		devtoolModuleFilenameTemplate: './[resource]',
 	},
 };
@@ -99,13 +124,14 @@ const webpackProductionConfig = {
 					keep_fnames: true,
 				},
 				include: /\.min\.js$/,
+				exclude : /\.min\.js\.map$/
 			} ),
 		],
 	},
 	mode: 'production',
 	output: {
-		path: path.resolve( __dirname, './build/assets/js' ),
-		filename: '[name].js',
+		path: path.resolve( __dirname, './build/assets/' ),
+		filename: 'js/[name].js',
 	},
 	performance: { hints: false },
 };
@@ -117,11 +143,11 @@ Object.entries( webpackProductionConfig.entry ).forEach( ( [ wpEntry, value ] ) 
 	delete webpackProductionConfig.entry[ wpEntry ];
 } );
 
-const localOutputPath = { ...webpackProductionConfig.output, path: path.resolve( __dirname, './assets/js' ) };
+const localOutputPath = { ...webpackProductionConfig.output, path: path.resolve( __dirname, './assets' ) };
 
 module.exports = ( env ) => {
 	if ( env.developmentLocalWithWatch ) {
-		return { ...webpackConfig, watch: true, devtool: 'source-map', output: localOutputPath };
+		return { ...webpackConfig, plugins: [new CopyPlugin(commonConfig)], watch: true, devtool: 'source-map', output: localOutputPath };
 	}
 
 	if ( env.productionLocalWithWatch ) {
@@ -133,7 +159,7 @@ module.exports = ( env ) => {
 	}
 
 	if ( env.developmentLocal ) {
-		return { ...webpackConfig, devtool: 'source-map', output: localOutputPath };
+		return { ...webpackConfig, plugins: [new CopyPlugin(commonConfig)], devtool: 'source-map', output: localOutputPath };
 	}
 
 	if ( env.production ) {
@@ -141,7 +167,7 @@ module.exports = ( env ) => {
 	}
 
 	if ( env.development ) {
-		return { ...webpackConfig, plugins: [ copyPluginConfig ] };
+		return { ...webpackConfig, plugins: [new CopyPlugin(mergedConfig)] };
 	}
 
 	throw new Error( 'missing or invalid --env= development/production/developmentWithWatch/productionWithWatch' );

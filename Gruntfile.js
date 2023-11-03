@@ -19,13 +19,13 @@ module.exports = function( grunt ) {
 			dist: {
 				files: 'production' === grunt.option( 'environment' ) ? [ {
 					expand: true,
-					cwd: 'assets/scss',
+					cwd: 'src/scss',
 					src: '*.scss',
 					dest: './build/assets/css',
 					ext: '.css',
 				} ] : [ {
 					expand: true,
-					cwd: 'assets/scss',
+					cwd: 'src/scss',
 					src: '*.scss',
 					dest: './assets/css',
 					ext: '.css',
@@ -76,7 +76,7 @@ module.exports = function( grunt ) {
 		watch: {
 			styles: {
 				files: [
-					'assets/scss/**/*.scss',
+					'src/scss/**/*.scss',
 				],
 				tasks: [ 'styles' ],
 			},

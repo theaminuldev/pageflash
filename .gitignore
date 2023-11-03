@@ -1,18 +1,23 @@
+# Ignore development-specific files and directories
 .idea/
 node_modules/
 .sass-cache/
 build/
 log/
-vendor/
 composer.lock
 package-lock.json
+
+# Ignore system and editor-generated files
 .DS_Store
 .project
 Thumbs.db
+
+# Ignore logs and source map files
 *.log
 *.map
+
+# Ignore lock files and build artifacts
 yarn.lock
-assets/js/
-assets/css/
+assets/
 *.css
 *.zip
