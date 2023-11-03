@@ -18,6 +18,6 @@ Thumbs.db
 
 # Ignore lock files and build artifacts
 yarn.lock
-assets/
+assets/**
 *.css
 *.zip
