@@ -2,7 +2,7 @@
     "name": "theaminul/pageflash",
     "description": "PageFlash - Fast and Efficient Headless Browser WordPress Plugin",
     "type": "wordpress-plugin",
-    "keywords": ["wordpress", "plugin"],
+    "keywords": ["wordpress", "plugin", "pageflash"],
     "license": "GPL-3.0",
     "homepage": "https://github.com/theaminuldev/pageflash/",
     "scripts": {
