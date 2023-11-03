@@ -11,7 +11,7 @@
         "watch": "concurrently \"grunt default watch\" \"webpack --env=developmentLocalWithWatch\" \"webpack --env=productionLocalWithWatch\"",
         "clean": "rimraf build && rimraf pageflash.zip",
         "zip": "npm run clean && npm run prod && node scripts/zip.js && node scripts/move-files.js",
-        "lint:js": "eslint ."
+        "lint": "eslint ."
     },
     "devDependencies": {
         "@babel/core": "~7.18.0",

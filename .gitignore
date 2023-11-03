@@ -1,6 +1,7 @@
 # Ignore development-specific files and directories
 .idea/
 node_modules/
+vendor/
 .sass-cache/
 build/
 log/
