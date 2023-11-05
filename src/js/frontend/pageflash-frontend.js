@@ -1,1 +1,1 @@
-confirm("Press a button!");
+// Silence is golden.

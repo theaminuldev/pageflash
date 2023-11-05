@@ -35,7 +35,7 @@ if ( ! version_compare( PHP_VERSION, '7.0', '>=' ) ) {
 } elseif ( ! version_compare( get_bloginfo( 'version' ), '5.9', '>=' ) ) {
     add_action( 'admin_notices', 'pageflash_fail_wp_version' );
 } else {
-    require PAGEFLASH_PATH . 'includes/plugin.php';
+    require PAGEFLASH_PATH . 'includes/Plugin.php';
 }
 
 /**
@@ -67,7 +67,7 @@ function pageflash_fail_php_version() {
         '<h3>',
         '</h3>',
         '7.0',
-        '<a href="https://example.com/update-php" target="_blank">', // Replace with the actual link.
+        '<a href="#" target="_blank">', // Replace with the actual link.
         '</a>'
     );
     $html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
@@ -90,7 +90,7 @@ function pageflash_fail_wp_version() {
         '<h3>',
         '</h3>',
         '5.9',
-        '<a href="https://example.com/update-wordpress" target="_blank">', // Replace with the actual link.
+        '<a href="#" target="_blank">', // Replace with the actual link.
         '</a>'
     );
     $html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
