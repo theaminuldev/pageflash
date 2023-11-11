@@ -17,6 +17,56 @@ class NoMoreReload {
     public function __construct() {
         // Constructor code
         add_filter( 'script_loader_tag', array($this, 'pageflash_async_script_loader'), 10, 2 );
+        add_action('wp_enqueue_scripts', array($this, 'pageflash_quicklink_config'));
+    }
+
+    /**
+     * Filters PageFlash Quicklink settings.
+     *
+     * @link https://github.com/GoogleChromeLabs/quicklink
+     * @param array {
+     *     Configuration options for PageFlash Quicklink.
+     *
+     *     @param string   $el        CSS selector for the DOM element to observe for in-viewport links to prefetch.
+     *     @param int      $limit     The total requests that can be prefetched while observing the $el container.
+     *     @param int      $throttle  The concurrency limit for simultaneous requests while observing the $el container.
+     *     @param int      $timeout   Timeout after which prefetching will occur.
+     *     @param string   $timeoutFn Custom timeout function. Must refer to a named global function in JS.
+     *     @param bool     $priority  Attempt higher priority fetch (low or high). Default false.
+     *     @param string[] $origins   Allowed origins to prefetch (empty allows all). Defaults to host for the current home URL.
+     *     @param string[] $ignores   Regular expression patterns to determine whether a URL is ignored. Runs after origin checks.
+     * }
+     */
+
+    public function pageflash_quicklink_config() {
+        $current_url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $current_request_uri = esc_url_raw(wp_unslash($_SERVER['REQUEST_URI']));
+        $current_request_uri = preg_quote($current_request_uri, '/');
+        $ignore_pattern = '/^https?:\/\/[^\/]+' . $current_request_uri . '(#.*)?$/';
+
+
+        // Configure Quicklink with your settings
+        $quicklink_settings = array(
+            'el' => '', // CSS selector for in-viewport links to prefetch
+            'urls'      => array(site_url('/')), // Static array of URLs to prefetch.
+            'timeout' => 2000,   // Set the timeout
+            'timeoutFn' => 'requestIdleCallback', // Use requestIdleCallback for timing
+            'priority' => false,  // Use fetch() API where supported
+            'origins' => array(
+                wp_parse_url(home_url('/'), PHP_URL_HOST),
+                site_url('/'),
+                esc_url_raw($current_url),
+            ), // Static array of URL hostname strings that are allowed to be prefetched.
+            'ignores' => array(
+                preg_quote('feed=', '/'),
+                preg_quote('/feed/', '/'),
+                admin_url('/'),
+                wp_login_url('/'),
+                content_url(),
+                $ignore_pattern,
+            ), // Don't pre-fetch links to the admin since they could be nonce links.
+        );
+        wp_localize_script('pageflash-frontend', 'quicklinkSettings', $quicklink_settings);
     }
 
     /**
@@ -33,15 +83,15 @@ class NoMoreReload {
     * @return string The modified script tag.
     */
 
-    function pageflash_async_script_loader( $tag, $handle ) {
+    public function pageflash_async_script_loader( $tag, $handle ) {
 
-        return 'pageflash-quicklink' === $handle && false === strpos( $tag, 'async' ) 
-        ? str_replace( '></script>', ' async></script>', $tag ) : $tag;
-
-    }
-
+        $async_handles = array('pageflash-quicklink', 'pageflash-frontend');
     
-
-
+        if (in_array($handle, $async_handles) && false === strpos($tag, 'async')) {
+            $tag = str_replace('></script>', ' async></script>', $tag);
+        }
+    
+        return $tag;
+    }
    
 }
