@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress PageFlash">
+	<description>WordPress coding standards for the PageFlash plugin.</description>
+
+	<rule ref="PHPCompatibility"/>
+
+	<!-- Sets the minimum supported WP version to 6.4, which is over a year. -->
+	<config name="minimum_supported_wp_version" value="6.4" />
+	<!-- For CI, don't fail on warnings -->
+	<config name="ignore_warnings_on_exit" value="1"/>
+
+	<rule ref="WordPress-Core">
+		<exclude name="WordPress.PHP.YodaConditions" />
+	</rule>
+	<rule ref="WordPress-Docs"/>
+
+	<!-- <arg name="basepath" value="."/> -->
+    <arg name="extensions" value="php"/>
+
+
+	<exclude-pattern>vendor/</exclude-pattern>
+	<exclude-pattern>build/</exclude-pattern>
+	<exclude-pattern>node_modules/</exclude-pattern>
+	<exclude-pattern>tests/*.php</exclude-pattern>
+
+	<rule ref="WordPress-Extra">
+		<exclude name="Generic.Commenting.DocComment.MissingShort" />
+		<exclude name="Generic.Formatting.MultipleStatementAlignment" />
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
+		<exclude name="Squiz.Commenting.ClassComment.Missing" />
+		<exclude name="Squiz.Commenting.FileComment.Missing" />
+		<exclude name="Squiz.Commenting.FunctionComment.Missing" />
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
+		<exclude name="Squiz.Commenting.VariableComment.Missing" />
+		<exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
+		<exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
+		<exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
+		<exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterEnd" />
+		<exclude name="WordPress.Arrays.MultipleStatementAlignment" />
+		<exclude name="WordPress.CSRF.NonceVerification.NoNonceVerification" />
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+		<exclude name="WordPress.Security.NonceVerification.NoNonceVerification"/>
+		<exclude name="WordPress.Security.NonceVerification.Missing"/>
+		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+		<exclude name="WordPress.WP.I18n.NonSingularStringLiteralSingle" />
+		<exclude name="WordPress.WP.I18n.NonSingularStringLiteralPlural" />
+		<exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet" />
+		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
+		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
+		<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
+	</rule>
+
+	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="5.5" />
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.ValidHookName">
+		<properties>
+			<property name="additionalWordDelimiters" value="/-" />
+		</properties>
+	</rule>
+
+	<!-- Our Textdomain for i18n -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" value="pageflash" />
+		</properties>
+	</rule>
+
+	<!-- Sometimes we need to override globals -->
+	<rule ref="WordPress.WP.GlobalVariablesOverride.OverrideProhibited">
+		<type>warning</type>
+	</rule>
+
+	<!-- Make missing translator comment a warning. -->
+	<rule ref="WordPress.WP.I18n.MissingTranslatorsComment">
+		<type>warning</type>
+	</rule>
+
+	<!--
+	Prevent errors caused by WordPress Coding Standards not supporting PHP 8.0+.
+	See https://github.com/WordPress/WordPress-Coding-Standards/issues/2035
+	-->
+	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+</ruleset>
+

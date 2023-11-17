@@ -1,7 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
 const archiver = require('archiver');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const sourceDir = path.resolve(__dirname, '../build');
 const zipFilePath = path.resolve(__dirname, '../pageflash.zip');

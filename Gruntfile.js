@@ -1,5 +1,5 @@
 /**
- * Hello Elementor theme Makefile
+ * Pageflash Plugin Makefile
  */
 'use strict';
 

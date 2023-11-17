@@ -36,7 +36,14 @@ const copyPluginConfig = {
 					'**/phpcs.xml',
 					'**/README.md',
 					'**/webpack.config.js',
-					'**/vendor/**',
+					
+					'**/vendor/wp-coding-standards/**',
+					'**/vendor/tareq1988/**',
+					'**/vendor/squizlabs/**',
+					'**/vendor/phpcsstandards/**',
+					'**/vendor/phpcompatibility/**',
+					'**/vendor/dealerdirect/**',
+					'**/vendor/bin/**',
 				],
 			},
 		},
@@ -92,8 +99,8 @@ const moduleRules = {
 };
 
 const entry = {
-	'pageflash-admin': path.resolve( __dirname, './src/js/admin/pageflash-admin.js' ),
-	'pageflash-frontend': path.resolve( __dirname, './src/js/frontend/pageflash-frontend.js' ),
+	'js/admin/pageflash-admin': path.resolve( __dirname, './src/js/admin/pageflash-admin.js' ),
+	'js/frontend/pageflash-frontend': path.resolve( __dirname, './src/js/frontend/pageflash-frontend.js' ),
 };
 
 const webpackConfig = {
@@ -104,7 +111,7 @@ const webpackConfig = {
 	mode: 'development',
 	output: {
 		path: path.resolve( __dirname, './build/assets/' ),
-		filename: 'js/[name].js',
+		filename: '[name].js',
 		devtoolModuleFilenameTemplate: './[resource]',
 	},
 };
@@ -131,7 +138,7 @@ const webpackProductionConfig = {
 	mode: 'production',
 	output: {
 		path: path.resolve( __dirname, './build/assets/' ),
-		filename: 'js/[name].js',
+		filename: '[name].js',
 	},
 	performance: { hints: false },
 };
