@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
   /**
  * Global helper class.
  *
- * @since 1.0.0
+ * @since PageFlash 1.0.0
  */
 class Helper {
 
@@ -16,7 +16,7 @@ class Helper {
      * This method uses the wp_kses function to sanitize and return content
      * based on an array of allowed HTML elements and their attributes.
      *
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      *
      * @param string $content The content to sanitize.
      *
@@ -33,7 +33,7 @@ class Helper {
      * This method returns an array of allowed HTML elements and their attributes
      * for use in content sanitization to ensure safe and valid HTML output.
      *
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      *
      * @return array An array of allowed HTML elements and attributes.
      */

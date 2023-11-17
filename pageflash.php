@@ -43,7 +43,7 @@ if ( ! version_compare( PHP_VERSION, '7.0', '>=' ) ) {
  *
  * Load gettext translate for PageFlash text domain.
  *
- * @since 1.0.0
+ * @since PageFlash 1.0.0
  *
  * @return void
  */
@@ -56,7 +56,7 @@ function pageflash_load_plugin_textdomain() {
  *
  * Warning when the site doesn't have the minimum required PHP version.
  *
- * @since 1.0.0
+ * @since PageFlash 1.0.0
  *
  * @return void
  */
@@ -79,7 +79,7 @@ function pageflash_fail_php_version() {
  *
  * Warning when the site doesn't have the minimum required WordPress version.
  *
- * @since 1.0.0
+ * @since PageFlash 1.0.0
  *
  * @return void
  */

@@ -19,21 +19,21 @@ if (!defined('ABSPATH')) {
 
     /**
      * Settings sections array
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      * @var array
      */
     protected $settings_sections = [];
 
     /**
      * Settings fields array
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      * @var array
      */
     protected $settings_fields = [];
 
     /**
      * Set settings sections
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      * @param array   $sections Setting sections array
      */
     public function set_sections($sections) {
@@ -44,7 +44,7 @@ if (!defined('ABSPATH')) {
     /**
      * Add a single section
      * 
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      * @param array   $section
      */
     public function add_section($section) {
@@ -54,7 +54,7 @@ if (!defined('ABSPATH')) {
 
     /**
      * Set settings fields
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      * @param array   $fields Settings fields array
      */
     public function set_fields($fields) {
@@ -79,7 +79,7 @@ if (!defined('ABSPATH')) {
      *
      * This function should be called at the `admin_init` hook.
      * It registers the settings sections and fields to make them ready for use.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function admin_init() {
         // Register settings sections
@@ -134,7 +134,7 @@ if (!defined('ABSPATH')) {
      * Get field description for display.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function get_field_description($args) {
         if (!empty($args['desc'])) {
@@ -150,7 +150,7 @@ if (!defined('ABSPATH')) {
      * Displays a text field for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_text($args) {
         $value = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
@@ -174,7 +174,7 @@ if (!defined('ABSPATH')) {
      * Displays a URL field for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_url($args) {
         $this->callback_text($args);
@@ -184,7 +184,7 @@ if (!defined('ABSPATH')) {
      * Displays a number field for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_number($args) {
         $this->callback_text($args);
@@ -194,7 +194,7 @@ if (!defined('ABSPATH')) {
      * Displays a checkbox for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_checkbox($args) {
         $value = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
@@ -218,7 +218,7 @@ if (!defined('ABSPATH')) {
      * Displays a multicheckbox for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_multicheck($args) {
         $value = $this->get_option($args['id'], $args['section'], $args['std']);
@@ -248,7 +248,7 @@ if (!defined('ABSPATH')) {
      * Displays a radio group for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_radio($args) {
         $value = $this->get_option($args['id'], $args['section'], $args['std']);
@@ -276,7 +276,7 @@ if (!defined('ABSPATH')) {
      * Displays a selectbox for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_select($args) {
         $value = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
@@ -297,7 +297,7 @@ if (!defined('ABSPATH')) {
      * Displays a textarea for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_textarea($args) {
         $value = esc_textarea($this->get_option($args['id'], $args['section'], $args['std']));
@@ -320,7 +320,7 @@ if (!defined('ABSPATH')) {
      *
      * @param array $args Settings field args.
      * @return string
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_html($args) {
         echo wp_kses($this->get_field_description($args), Helper::get_kses_array());
@@ -330,7 +330,7 @@ if (!defined('ABSPATH')) {
      * Displays a rich text textarea for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function callback_wysiwyg($args) {
         $value = $this->get_option($args['id'], $args['section'], $args['std']);
@@ -360,7 +360,7 @@ if (!defined('ABSPATH')) {
      * Displays a file upload field for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     function callback_file($args) {
         $value = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
@@ -385,7 +385,7 @@ if (!defined('ABSPATH')) {
      * Displays a password field for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     function callback_password($args) {
         $value = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
@@ -407,7 +407,7 @@ if (!defined('ABSPATH')) {
      * Displays a color picker field for a settings field.
      *
      * @param array $args Settings field args.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     function callback_color($args) {
         $value = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
@@ -431,7 +431,7 @@ if (!defined('ABSPATH')) {
      *
      * @param array $options Settings options.
      * @return array Sanitized options.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     function sanitize_options($options) {
         foreach ($options as $option_slug => $option_value) {
@@ -451,7 +451,7 @@ if (!defined('ABSPATH')) {
      *
      * @param string $slug Option slug.
      * @return mixed String or bool false.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     function get_sanitize_callback($slug = '') {
         if (empty($slug)) {
@@ -478,7 +478,7 @@ if (!defined('ABSPATH')) {
      * @param string $section The section name this field belongs to.
      * @param string $default Default text if it's not found.
      * @return string
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     function get_option($option, $section, $default = '') {
         $options = get_option($section);
@@ -494,7 +494,7 @@ if (!defined('ABSPATH')) {
      * Show navigations as tabs.
      *
      * Shows all the settings section labels as tabs.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     function show_navigation() {
         $html = '<h2 class="nav-tab-wrapper">';
@@ -512,7 +512,7 @@ if (!defined('ABSPATH')) {
      * Show the section settings forms.
      *
      * This function displays every section in a different form.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     function show_forms() {
         ?>

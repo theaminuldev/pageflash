@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * The main plugin handler class is responsible for initializing PageFlash. The
  * class registers all the init_features required to run the plugin.
  *
- * @since 1.0.0
+ * @since PageFlash 1.0.0
  */
 
  class Plugin {
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	/**
 	 * Instance
 	 *
-	 * @since 1.0.0
+	 * @since PageFlash 1.0.0
 	 * @access private
 	 * @static
 	 *
@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 *
 	 * Ensures only one instance of the class is loaded or can be loaded.
 	 *
-	 * @since 1.0.0
+	 * @since PageFlash 1.0.0
 	 * @access public
 	 *
 	 * @return Plugin An instance of the class.
@@ -61,7 +61,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 *
 	 * This method initializes the assets manager for your PageFlash plugin.
 	 *
-	 * @since 1.0.0
+	 * @since PageFlash 1.0.0
 	 * @access private
 	 */
 	private function init_assets() {
@@ -74,7 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 *
 	 * This method initializes the admin-related features for your PageFlash plugin.
 	 *
-	 * @since 1.0.0
+	 * @since PageFlash 1.0.0
 	 * @access private
 	 */
 	private function init_admin() {
@@ -91,7 +91,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * initialize all the init_features that run PageFlash, and if in the admin page,
 	 * initialize admin init_features.
 	 *
-	 * @since 1.0.0
+	 * @since PageFlash 1.0.0
 	 * @access private
 	 */
 	private function init_features() {
@@ -104,7 +104,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * Initialize PageFlash Plugin. Register PageFlash support for all the
 	 * supported post types and initialize PageFlash init_features.
 	 *
-	 * @since 1.0.0
+	 * @since PageFlash 1.0.0
 	 * @access private
 	 */
 	private function init() {
@@ -119,7 +119,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 *
 	 * Register plugin action hooks and filters
 	 *
-	 * @since 1.0.0
+	 * @since PageFlash 1.0.0
 	 * @access public
 	 */
 	public function __construct() {

@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
  * This class provides functionality for something in your PageFlash plugin.
  *
  * @package pageflash 
- * @since 1.0.0
+ * @since PageFlash 1.0.0
  */
 class NoMoreReload {
     public function __construct() {
@@ -22,7 +22,7 @@ class NoMoreReload {
 
     /**
      * Filters PageFlash Quicklink settings.
-     *
+     * @since PageFlash 1.0.0
      * @link https://github.com/GoogleChromeLabs/quicklink
      * @param array {
      *     Configuration options for PageFlash Quicklink.
@@ -73,7 +73,7 @@ class NoMoreReload {
     * Add 'async' attribute to PageFlash script loader tag.
     *
     * This function adds the 'async' attribute to the script tag for PageFlash to improve page loading speed.
-    *
+    * @since PageFlash 1.0.0
     * @link https://github.com/WordPress/twentynineteen/pull/646
     * @link https://github.com/wprig/wprig/blob/9a7c23d8d3db735259de6c338ddbb7cb7fd0ada1/dev/inc/template-functions.php#L41-L70
     * @link https://core.trac.wordpress.org/ticket/12009

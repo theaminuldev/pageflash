@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
  * This class handles the loading and registration of assets (styles and scripts) for the PageFlash plugin.
  *
  * @package pageflash
- * @since 1.0.0
+ * @since PageFlash 1.0.0
  */
 class AssetsManager {
     public function __construct() {
@@ -29,7 +29,7 @@ class AssetsManager {
      * Add quicklink to the default scripts to make it available earlier in the runtime.
      * @param WP_Scripts $scripts The WP_Scripts instance.
      * @return void
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function pageflash_frontend_assets_script($scripts){
         $min_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
@@ -48,7 +48,7 @@ class AssetsManager {
         $scripts->add(
             'pageflash-frontend',
             PAGEFLASH_ASSETS_URL . 'js/frontend/pageflash-frontend' . $min_suffix . '.js',
-            ['pageflash-quicklink', 'jquery'],
+            [],
             PAGEFLASH_VERSION,
             true
         );
@@ -60,7 +60,7 @@ class AssetsManager {
      *
      * This method enqueues scripts and styles necessary for the PageFlash plugin's functionality.
      * @return void
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
 
      public function pageflash_frontend_assets() {
@@ -75,7 +75,7 @@ class AssetsManager {
 		);
 
         wp_enqueue_script( 'pageflash-frontend');
-        wp_enqueue_script('pageflash-quicklink');
+        // wp_enqueue_script('pageflash-quicklink');
     }
     
     /**
@@ -83,7 +83,7 @@ class AssetsManager {
      *
      * This method enqueues scripts and styles necessary for the PageFlash plugin's functionality.
      * @return void
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function pageflash_admin_enqueue_scripts() {
 

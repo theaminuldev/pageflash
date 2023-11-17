@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
  * This class handles the administration-related functionality for the PageFlash plugin.
  *
  * @package PageFlash
- * @since 1.0.0
+ * @since PageFlash 1.0.0
  */
 class PageFlashAdmin {
     private $settings_api;
@@ -21,7 +21,7 @@ class PageFlashAdmin {
      * Constructor for the PageFlashAdmin class.
      *
      * Initializes the settings API and adds necessary actions.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function __construct() {
         $this->settings_api = new PageFlashSettingsAPI();
@@ -34,7 +34,7 @@ class PageFlashAdmin {
      * Initialize PageFlash admin settings.
      *
      * Sets up the sections and fields, and initializes settings.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function pageflash_admin_init() {
         // Set the settings
@@ -49,7 +49,7 @@ class PageFlashAdmin {
      * Add options page to the admin menu.
      *
      * Registers the PageFlash settings page in the WordPress admin menu.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function pageflash_admin_menu() {
         add_options_page(
@@ -65,7 +65,7 @@ class PageFlashAdmin {
      * Define the settings sections.
      *
      * @return array Settings sections
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function get_settings_sections() {
         $sections = array(
@@ -87,7 +87,7 @@ class PageFlashAdmin {
      * Define the settings fields.
      *
      * @return array Settings fields
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function get_settings_fields() {
         $settings_fields = array(
@@ -132,7 +132,7 @@ class PageFlashAdmin {
      * Display the plugin settings page.
      *
      * Renders the PageFlash settings page in the WordPress admin area.
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function plugin_page() {
         echo '<div class="wrap">';
@@ -147,7 +147,7 @@ class PageFlashAdmin {
      * Get all the pages and return them as an array of page names with key-value pairs.
      *
      * @return array Page names with key-value pairs
-     * @since 1.0.0
+     * @since PageFlash 1.0.0
      */
     public function get_pages() {
         $pages = get_pages();
