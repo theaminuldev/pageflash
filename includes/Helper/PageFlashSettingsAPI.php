@@ -336,12 +336,12 @@ if (!defined('ABSPATH')) {
         $value = $this->get_option($args['id'], $args['section'], $args['std']);
         $size = isset($args['size']) && !is_null($args['size']) ? $args['size'] : '500px';
 
-        echo '<div style="max-width: ' . $size . ';">';
+        echo '<div style="max-width: ' . esc_attr($size) . ';">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already Security Escaped
 
         $editor_settings = array(
-            'teeny' => true,
+            'teeny'         => true,
             'textarea_name' => $args['section'] . '[' . $args['id'] . ']',
-            'textarea_rows' => 10
+            'textarea_rows' => 10,
         );
 
         if (isset($args['options']) && is_array($args['options'])) {

@@ -21,6 +21,7 @@ import * as quicklink from 'quicklink';
  * @since PageFlash 1.0.0
  */
 window.pageflash = quicklink;
+const settings = window.pageflashSettings || {};
 
 /**
  * Initialize PageFlash on page load.
@@ -28,8 +29,6 @@ window.pageflash = quicklink;
  * @listens load
  */
 global.addEventListener('load', () => {
-    const settings = window.quicklinkSettings || {};
-
     /**
      * Build PageFlash listener options from user settings.
      *
@@ -37,7 +36,7 @@ global.addEventListener('load', () => {
      */
     const listenerOptions = buildListenerOptions(settings);
     pageflash.listen(listenerOptions);
-    console.log(pageflash.listen(listenerOptions));
+
     /**
      * The option to prefetch urls from the options is as of version 1.0.0.
      */

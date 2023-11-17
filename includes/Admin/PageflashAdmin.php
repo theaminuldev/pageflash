@@ -22,6 +22,7 @@ class PageFlashAdmin {
      *
      * Initializes the settings API and adds necessary actions.
      * @since PageFlash 1.0.0
+     * @access public
      */
     public function __construct() {
         $this->settings_api = new PageFlashSettingsAPI();
@@ -35,6 +36,7 @@ class PageFlashAdmin {
      *
      * Sets up the sections and fields, and initializes settings.
      * @since PageFlash 1.0.0
+     * @access public
      */
     public function pageflash_admin_init() {
         // Set the settings
@@ -50,6 +52,7 @@ class PageFlashAdmin {
      *
      * Registers the PageFlash settings page in the WordPress admin menu.
      * @since PageFlash 1.0.0
+     * @access public
      */
     public function pageflash_admin_menu() {
         add_options_page(
@@ -66,6 +69,7 @@ class PageFlashAdmin {
      *
      * @return array Settings sections
      * @since PageFlash 1.0.0
+     * @access public
      */
     public function get_settings_sections() {
         $sections = array(
@@ -88,6 +92,7 @@ class PageFlashAdmin {
      *
      * @return array Settings fields
      * @since PageFlash 1.0.0
+     * @access public
      */
     public function get_settings_fields() {
         $settings_fields = array(
@@ -133,6 +138,7 @@ class PageFlashAdmin {
      *
      * Renders the PageFlash settings page in the WordPress admin area.
      * @since PageFlash 1.0.0
+     * @access public
      */
     public function plugin_page() {
         echo '<div class="wrap">';
@@ -148,6 +154,7 @@ class PageFlashAdmin {
      *
      * @return array Page names with key-value pairs
      * @since PageFlash 1.0.0
+     * @access public
      */
     public function get_pages() {
         $pages = get_pages();

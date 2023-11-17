@@ -17,12 +17,13 @@ class NoMoreReload {
     public function __construct() {
         // Constructor code
         add_filter( 'script_loader_tag', array($this, 'pageflash_async_script_loader'), 10, 2 );
-        add_action('wp_enqueue_scripts', array($this, 'pageflash_quicklink_config'));
+        add_action('wp_enqueue_scripts', array($this, 'pageflash_settings_config'));
     }
 
     /**
      * Filters PageFlash Quicklink settings.
      * @since PageFlash 1.0.0
+     * @access public
      * @link https://github.com/GoogleChromeLabs/quicklink
      * @param array {
      *     Configuration options for PageFlash Quicklink.
@@ -38,15 +39,14 @@ class NoMoreReload {
      * }
      */
 
-    public function pageflash_quicklink_config() {
+    public function pageflash_settings_config() {
         $current_url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $current_request_uri = esc_url_raw(wp_unslash($_SERVER['REQUEST_URI']));
         $current_request_uri = preg_quote($current_request_uri, '/');
         $ignore_pattern = '/^https?:\/\/[^\/]+' . $current_request_uri . '(#.*)?$/';
 
 
-        // Configure Quicklink with your settings
-        $quicklink_settings = array(
+        $pageflash_settings = array(
             'el' => '', // CSS selector for in-viewport links to prefetch
             'urls'      => array(site_url('/')), // Static array of URLs to prefetch.
             'timeout' => 2000,   // Set the timeout
@@ -66,7 +66,7 @@ class NoMoreReload {
                 $ignore_pattern,
             ), // Don't pre-fetch links to the admin since they could be nonce links.
         );
-        wp_localize_script('pageflash-frontend', 'quicklinkSettings', $quicklink_settings);
+        wp_localize_script('pageflash-frontend', 'pageflashSettings', $pageflash_settings);
     }
 
     /**
@@ -74,6 +74,7 @@ class NoMoreReload {
     *
     * This function adds the 'async' attribute to the script tag for PageFlash to improve page loading speed.
     * @since PageFlash 1.0.0
+    * @access public
     * @link https://github.com/WordPress/twentynineteen/pull/646
     * @link https://github.com/wprig/wprig/blob/9a7c23d8d3db735259de6c338ddbb7cb7fd0ada1/dev/inc/template-functions.php#L41-L70
     * @link https://core.trac.wordpress.org/ticket/12009

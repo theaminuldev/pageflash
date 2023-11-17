@@ -10,6 +10,10 @@ defined( 'ABSPATH' ) || exit;
  */
 class Helper {
 
+    public static function pageflash_no_more_load_active(){
+        
+    }
+
     /**
      * Sanitize and return the content using wp_kses.
      *
@@ -19,7 +23,7 @@ class Helper {
      * @since PageFlash 1.0.0
      *
      * @param string $content The content to sanitize.
-     *
+     * @access public
      * @return string Sanitized content.
      */
     public static function sanitize_content( $content ) {
@@ -34,7 +38,7 @@ class Helper {
      * for use in content sanitization to ensure safe and valid HTML output.
      *
      * @since PageFlash 1.0.0
-     *
+     * @access public
      * @return array An array of allowed HTML elements and attributes.
      */
     public static function get_kses_array() {
