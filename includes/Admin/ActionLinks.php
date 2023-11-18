@@ -78,7 +78,6 @@ class ActionLinks {
     
             // Combine the modified original array and the new elements
             $plugin_meta = array_merge($plugin_meta, $row_meta);
-            error_log(print_r($plugin_meta, true));
         }
     
         return $plugin_meta;
