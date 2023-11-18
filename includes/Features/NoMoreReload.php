@@ -44,8 +44,7 @@ class NoMoreReload {
         $current_request_uri = esc_url_raw(wp_unslash($_SERVER['REQUEST_URI']));
         $current_request_uri = preg_quote($current_request_uri, '/');
         $ignore_pattern = '/^https?:\/\/[^\/]+' . $current_request_uri . '(#.*)?$/';
-
-
+        
         $pageflash_settings = array(
             'el' => '', // CSS selector for in-viewport links to prefetch
             'urls'      => array(site_url('/')), // Static array of URLs to prefetch.
