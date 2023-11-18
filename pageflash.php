@@ -2,12 +2,12 @@
 /*
 	Plugin Name: PageFlash
 	Plugin URI: https://theaminul.com/pageflash/
-	Author: Aminul Islam
+	Author: theaminul
 	Author URI: theaminul.com
 	Version: 1.0.0
 	Stable tag: 1.0.0
 	Requires at least: 5.9
-	Tested up to: 6.2
+	Tested up to: 6.4
 	Requires PHP: 7.4
 	License: GNU General Public License v3 or later.
 	License URI: https://www.gnu.org/licenses/gpl-3.0.html

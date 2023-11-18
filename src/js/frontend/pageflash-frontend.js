@@ -37,6 +37,7 @@ global.addEventListener('load', () => {
     const listenerOptions = buildListenerOptions(settings);
     pageflash.listen(listenerOptions);
 
+    console.log(listenerOptions);
     /**
      * The option to prefetch urls from the options is as of version 1.0.0.
      */
@@ -57,7 +58,7 @@ function buildListenerOptions(settings) {
         limit: validatePositiveNumber(settings.limit),
         throttle: validatePositiveNumber(settings.throttle),
         timeoutFn: getFunctionReference(settings.timeoutFn),
-        onError: getFunctionReference(settings.onError),
+        // onError: getFunctionReference(settings.onError),
         priority: validateBoolean(settings.priority),
         origins: validateOrigins(settings.origins),
         ignores: validateIgnores(settings.ignores),

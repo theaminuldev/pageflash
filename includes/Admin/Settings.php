@@ -14,11 +14,11 @@ if (!defined('ABSPATH')) {
  * @package PageFlash
  * @since PageFlash 1.0.0
  */
-class PageFlashAdmin {
+class Settings {
     private $settings_api;
 
     /**
-     * Constructor for the PageFlashAdmin class.
+     * Constructor for the Settings class.
      *
      * Initializes the settings API and adds necessary actions.
      * @since PageFlash 1.0.0
@@ -60,7 +60,7 @@ class PageFlashAdmin {
             esc_html__( 'PageFlash', 'pageflash' ),
             'manage_options', 
             'pageflash_settings', 
-            array($this, 'plugin_page')
+            [$this, 'plugin_page']
         );
     }
 
@@ -75,9 +75,14 @@ class PageFlashAdmin {
         $sections = array(
             array(
                 'id'    => 'pageflash_basics',
-                'title' => esc_html__('Basic Settings', 'pageflash'),
-                'desc'  => esc_html__('Basic settings for PageFlash', 'pageflash'),
+                'title' => esc_html__('Settings', 'pageflash'),
+                'desc'  => sprintf('<span style="font-size: 14px"> %1$s %2$s <br> <br> %3$s</span>',
+                    esc_html__('Personalize your PageFlash experience by controlling which Settings are active on your site.', 'pageflash'),
+                    esc_html__('Help make PageFlash better by sharing your experience and feedback with us.', 'pageflash'),
+                    esc_html__('To use the No More Reload feature on your site, simply click on the dropdown next to it and switch to Active. You can always deactivate it at any time', 'pageflash')
+                )
             ),
+            
             // array(
             //     'id'    => 'pageflash_advanced',
             //     'title' => __('Advanced Settings', 'pageflash'),

@@ -80,7 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	private function init_admin() {
 		if (is_admin()) {
 			// Initialize your admin-related features here
-			new Admin\PageflashAdmin(); 
+			new Admin\Admin(); 
 		}
 	}
 
