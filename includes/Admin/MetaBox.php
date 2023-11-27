@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
  * @package PageFlash
  * @since PageFlash 1.0.0
  */
-class Settings {
+class MetaBox {
     private $settings_api;
 
     /**
