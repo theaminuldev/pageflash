@@ -1,4 +1,6 @@
 # PageFlash - Fast and Efficient Headless Browser WordPress Plugin
+![PageFlash](https://github.com/theaminuldev/pageflash/blob/development/src/images/screenshot.png)
+
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 ### By using PageFlash, an active plugin, you'll experience a 50% increase in conversions and enjoy 4x faster page loading. ⚡️ Boost your website's speed, increase user engagement 💬, and supercharge your online presence 🚀. - NewEgg
