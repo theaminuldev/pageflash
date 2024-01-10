@@ -40,10 +40,8 @@ class NoMoreReload {
      */
 
     public function pageflash_settings_config() {
-        $current_url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        $current_request_uri = esc_url_raw(wp_unslash($_SERVER['REQUEST_URI']));
-        $current_request_uri = preg_quote($current_request_uri, '/');
-        $ignore_pattern = '/^https?:\/\/[^\/]+' . $current_request_uri . '(#.*)?$/';
+        $current_request_uri = esc_url_raw($_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+        $ignore_pattern =  $current_request_uri . '(#.*)?$/';
         
         $pageflash_settings = array(
             'el' => '', // CSS selector for in-viewport links to prefetch
@@ -54,7 +52,7 @@ class NoMoreReload {
             'origins' => array(
                 wp_parse_url(home_url('/'), PHP_URL_HOST),
                 site_url('/'),
-                esc_url_raw($current_url),
+                $current_request_uri,
             ), // Static array of URL hostname strings that are allowed to be prefetched.
             'ignores' => array(
                 preg_quote('feed=', '/'),

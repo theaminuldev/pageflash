@@ -1,9 +1,9 @@
 === PageFlash - Fast and Efficient Headless Browser WordPress Plugin ===
 Contributors: theaminuldev
 Tags: headless-browser, pageflash, prefetches, quicklink, quickload, performance, speed, fast, prefetch, seo preconnect, optimization
-Requires at least: 4.0
-Tested up to: 6.0
-Stable tag: 1.0
+Requires at least: 6.0
+Tested up to: 6.4.2
+Stable tag: 1.0.0
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Copyright: © 2023 theaminul.com
@@ -63,9 +63,5 @@ This plugin also works perfectly on popular browsers.
 1. [Screenshot 1](https://github.com/theaminuldev/pageflash/src/images/screenshot.png): Describe the screenshot here.
 
 == Changelog ==
-= 1.0 =
-* Initial release.
-
-== Upgrade Notice ==
-= 1.0 =
+= 1.0.0 =
 * Initial release.

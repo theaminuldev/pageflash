@@ -1,4 +1,4 @@
-import * as quicklink from 'quicklink';
+import * as quicklink from "quicklink";
 
 /**
  * PageFlash settings object.
@@ -28,7 +28,7 @@ const settings = window.pageflashSettings || {};
  * @since PageFlash 1.0.0
  * @listens load
  */
-global.addEventListener('load', () => {
+global.addEventListener("load", () => {
     /**
      * Build PageFlash listener options from user settings.
      *
@@ -36,8 +36,6 @@ global.addEventListener('load', () => {
      */
     const listenerOptions = buildListenerOptions(settings);
     pageflash.listen(listenerOptions);
-
-    console.log(listenerOptions);
     /**
      * The option to prefetch urls from the options is as of version 1.0.0.
      */
@@ -65,7 +63,6 @@ function buildListenerOptions(settings) {
     };
 }
 
-
 /**
  * Validate and get an HTML element based on the selector.
  *
@@ -74,7 +71,7 @@ function buildListenerOptions(settings) {
  * @since PageFlash 1.0.0
  */
 function validateElement(selector) {
-    if (typeof selector === 'string' && selector.trim() !== '') {
+    if (typeof selector === "string" && selector.trim() !== "") {
         return document.querySelector(selector);
     }
     return null; // or null, depending on your preference
@@ -88,7 +85,7 @@ function validateElement(selector) {
  * @since PageFlash 1.0.0
  */
 function validateNumber(value) {
-    return typeof value === 'string' ? Number(value) : 2000;
+    return typeof value === "string" ? Number(value) : 2000;
 }
 
 /**
@@ -99,7 +96,7 @@ function validateNumber(value) {
  * @since PageFlash 1.0.0
  */
 function validatePositiveNumber(value) {
-    return typeof value === 'string' && Number(value) > 0 ? value : Infinity;
+    return typeof value === "string" && Number(value) > 0 ? value : Infinity;
 }
 
 /**
@@ -110,7 +107,7 @@ function validatePositiveNumber(value) {
  * @since PageFlash 1.0.0
  */
 function validateBoolean(value) {
-    return typeof value === 'string' && value !== '' ? true : false;
+    return typeof value === "string" && value !== "" ? true : false;
 }
 
 /**
@@ -121,7 +118,8 @@ function validateBoolean(value) {
  * @since PageFlash 1.0.0
  */
 function getFunctionReference(functionName) {
-    return typeof functionName === 'string' && typeof window[functionName] === 'function'
+    return typeof functionName === "string" &&
+        typeof window[functionName] === "function"
         ? function () {
             return window[functionName].apply(window, arguments);
         }
