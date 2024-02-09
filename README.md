@@ -1,27 +1,65 @@
-# PageFlash - Fast and Efficient Headless Browser WordPress Plugin
-![PageFlash](https://github.com/theaminuldev/pageflash/blob/development/src/images/screenshot.png)
+<div align="center">
+  <br />
+    <a href="https://wordpress.org/plugins/pageflash/" target="_blank">
+      <img style="border-radius: 25px" src="https://github.com/theaminuldev/pageflash/blob/development/src/images/screenshot.png" alt="PageFlash Banner">
+    </a>
+  <br />
 
-[![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+  <div>
+    <img src="https://img.shields.io/badge/Wordpress-21759B?style=for-the-badge&logo=wordpress&logoColor=white" alt="Wordpress" />
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Javascript" />
+    <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="php" />
+    <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="Sponsors" />
+    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License-GPLv3" />
+  </div>
 
-### By using PageFlash, an active plugin, you'll experience a 50% increase in conversions and enjoy 4x faster page loading. ⚡️ Boost your website's speed, increase user engagement 💬, and supercharge your online presence 🚀. - NewEgg
-## Overview
+  <h1 align="center">PageFlash - Fast and Efficient Headless Browser WordPress Plugin</h1>
+
+   <div align="center">
+      <h3> By using PageFlash, an active plugin, you'll experience a 50% increase in conversions and enjoy 4x faster page loading. ⚡️ Boost your website's speed, increase user engagement 💬, and supercharge your online presence 🚀. - NewEgg </h3>
+    </div>
+</div>
+
+## 📋 <a name="table">Table of Contents</a>
+
+1. 🤖 [Overview](#overview)
+2. </> [Tech Stack](#tech-stack)
+3. 👀 [Features](#features)
+3. 🛠️ [How it works](#works)
+4. 🎯 [Why Choose the Name "PageFlash"?](#choose)
+4.  🌐 [Browser support](#browser)
+4.  ⬇️ [Installation](#installation)
+4. 🤸 [Usage](#usage)
+5. 📜 [License](#license)
+6. ✍ [Contributing](#contributing)
+7. ☎️ [Support](#support)
+7. 🪧 [Acknowledgments](#acknowledgments)
+
+## <a name="overview">🤖 Overview</a>
 
 **PageFlash** is a powerful headless browser WordPress plugin designed to provide you with a fast and efficient web browsing experience within your WordPress site. Say goodbye to page reloads and enjoy seamless navigation through web content with this plugin. Harness the speed and agility of PageFlash for your WordPress website.
 
-## Key Features & Why Choose PageFlash?
+## <a name="tech-stack"> </> Tech Stack</a>
 
-### Lightning Fast Browsing:
+- Javascript
+- PHP
+- Wordpress
+- Quicklink.js
+
+## <a name="features"> 👀 Key Features & Why Choose PageFlash? </a> 
+
+### 👉 Lightning Fast Browsing:
 PageFlash lives up to its name, offering rapid page loading and navigation without the need for tedious page refreshes.
 
-### Smooth Script Execution: 
+### 👉 Smooth Script Execution: 
 Execute scripts and interact with web pages in a fluid and continuous manner. With PageFlash, you'll experience uninterrupted script execution, ensuring your web applications run seamlessly.
-### Prefetches:
+### 👉 Prefetches:
 PageFlash incorporates advanced prefetching technology to speed up your web browsing. It anticipates and loads pages in the background, reducing loading times and providing a smoother browsing experience.
 
-### No More Reloads:
+### 👉 No More Reloads:
 Say goodbye to unnecessary page reloads with PageFlash, and enjoy uninterrupted web exploration. PageFlash ensures a frustration-free web experience by eliminating the need for page reloads, providing you with a streamlined and seamless browsing experience.
 
-## How it works
+## <a name="works" > 🛠️ How it works </a>
 
 * **Detects links within the viewport** (using [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API))
 * **Waits until the browser is idle** (using [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback))
@@ -29,7 +67,7 @@ Say goodbye to unnecessary page reloads with PageFlash, and enjoy uninterrupted 
 * **Prefetches URLs to the links** (using [`<link rel=prefetch>`](https://www.w3.org/TR/resource-hints/#prefetch) or XHR). Provides some control over the request priority (can switch to `fetch()` if supported).
 
 
-## Why Choose the Name "PageFlash"?
+## <a name="choose"> 🎯 Why Choose the Name "PageFlash"? </a>
 
 At PageFlash, we understand the importance of selecting the right name for our WordPress plugin. "PageFlash" was chosen with a purpose, and here's why:
 
@@ -43,7 +81,7 @@ At PageFlash, we understand the importance of selecting the right name for our W
 
 By choosing "PageFlash" as our plugin's name, we aim to convey the message that when you use PageFlash, you're choosing a high-speed, efficient, and memorable solution for your headless browser needs.
 
-## Browser support
+## <a name="browser"> 🌐 Browser support </a>
 
 This plugin also works perfectly on popular browsers.
 
@@ -53,7 +91,7 @@ This plugin also works perfectly on popular browsers.
 - 🖥 Opera
 - 📱 Android 4+
 
-## Installation
+## <a name="installation"> ⬇️ Installation </a>
 
 To install **PageFlash** on your WordPress site, follow these simple steps:
 
@@ -71,7 +109,7 @@ To install **PageFlash** on your WordPress site, follow these simple steps:
 
 3. Click "Install Now" and then "Activate."
 
-## Usage
+## <a name="usage"> 🤸 Usage </a>
 
 After activation, PageFlash seamlessly integrates with your WordPress site. To use it, follow these steps:
 
@@ -83,20 +121,20 @@ After activation, PageFlash seamlessly integrates with your WordPress site. To u
 
 For more detailed instructions and customization options, check out our [documentation](https://theaminul.com/pageflash/docs).
 
-## License
+## <a name="license"> 📜 License </a>
 
 PageFlash is open-source software released under the [GNU General Public License (GPL)](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-## Contributing
+## <a name="contributing"> ✍ Contributing </a>
 
 We welcome contributions from the community! If you'd like to help improve PageFlash, please read our [contribution guidelines](CONTRIBUTING.md) to get started.
 
-## Support
+## <a name="support"> ☎️ Support </a>
 
 If you encounter issues or have questions, please [open an issue](https://github.com/theaminuldev/pageflash/issues). We're here to help!
 
 
-## Acknowledgments
+## <a name="acknowledgments"> 🪧 Acknowledgments </a>
 
 PageFlash wouldn't be possible without the amazing open-source community and the contributions from developers worldwide.
 
