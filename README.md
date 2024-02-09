@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="https://wordpress.org/plugins/pageflash/" target="_blank">
-      <img style="border-radius: 25px" src="https://github.com/theaminuldev/pageflash/blob/development/src/images/screenshot.png" alt="PageFlash Banner">
+      <img src="https://github.com/theaminuldev/pageflash/blob/development/src/images/screenshot.png" alt="PageFlash Banner">
     </a>
   <br />
 
@@ -10,12 +10,13 @@
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Javascript" />
     <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="php" />
     <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="Sponsors" />
-    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License-GPLv3" />
+    <img alt="GitHub License" src="https://img.shields.io/github/license/theaminuldev/pageflash?style=for-the-badge&logo=License-GPLv3-blue" alt="License-GPLv3">
+
   </div>
 
-  <h1 align="center">PageFlash - Fast and Efficient Headless Browser WordPress Plugin</h1>
+  <h2 align="center">PageFlash - Fast and Efficient Headless Browser WordPress Plugin</h2>
 
-   <div align="center">
+   <div align="left">
       <h3> By using PageFlash, an active plugin, you'll experience a 50% increase in conversions and enjoy 4x faster page loading. ⚡️ Boost your website's speed, increase user engagement 💬, and supercharge your online presence 🚀. - NewEgg </h3>
     </div>
 </div>
