@@ -1,7 +1,7 @@
 <?php 
 /*
 	Plugin Name: PageFlash
-	Plugin URI: https://theaminul.com/pageflash/
+	Plugin URI: https://github.com/theaminuldev/pageflash
 	Author: theaminul
 	Author URI: theaminul.com
 	Version: 1.0.0
