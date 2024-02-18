@@ -3,9 +3,9 @@
  *
  * @package
  */
-const path = require( 'path' );
+const path = require('path');
 
-const CopyPlugin = require( 'copy-webpack-plugin' );
+const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const copyPluginConfig = {
@@ -13,7 +13,7 @@ const copyPluginConfig = {
 		{
 			from: '**/*',
 			context: __dirname,
-			to: path.resolve( __dirname, 'build' ),
+			to: path.resolve(__dirname, 'build'),
 			// Terser skip this file for minimization
 			info: { minimized: true },
 			globOptions: {
@@ -36,7 +36,7 @@ const copyPluginConfig = {
 					'**/phpcs.xml',
 					'**/README.md',
 					'**/webpack.config.js',
-					
+
 					'**/vendor/wp-coding-standards/**',
 					'**/vendor/tareq1988/**',
 					'**/vendor/squizlabs/**',
@@ -52,14 +52,14 @@ const copyPluginConfig = {
 
 const commonCopyConfig = {
 	patterns: [
-	  {
-		from: 'src/images/', // Source directory
-		to: './images', // Destination directory
-	  },
-	  {
-		from: 'src/libs/', // Source directory
-		to: './libs', // Destination directory
-	  },
+		{
+			from: 'src/images/', // Source directory
+			to: './images', // Destination directory
+		},
+		{
+			from: 'src/libs/', // Source directory
+			to: './libs', // Destination directory
+		},
 	],
 };
 
@@ -67,11 +67,11 @@ const commonConfig = {
 	patterns: [
 		...commonCopyConfig.patterns, // Merge patterns from commonCopyConfig
 	],
-}
+};
 const mergedConfig = {
 	patterns: [
-	  ...commonCopyConfig.patterns, // Merge patterns from commonCopyConfig
-	  ...copyPluginConfig.patterns, // Merge patterns from copyPluginConfig
+		...commonCopyConfig.patterns, // Merge patterns from commonCopyConfig
+		...copyPluginConfig.patterns, // Merge patterns from copyPluginConfig
 	],
 };
 
@@ -84,12 +84,12 @@ const moduleRules = {
 				{
 					loader: 'babel-loader',
 					options: {
-						presets: [ '@babel/preset-env' ],
+						presets: ['@babel/preset-env'],
 						plugins: [
-							[ '@babel/plugin-proposal-class-properties' ],
-							[ '@babel/plugin-transform-runtime' ],
-							[ '@babel/plugin-transform-modules-commonjs' ],
-							[ '@babel/plugin-proposal-optional-chaining' ],
+							['@babel/plugin-proposal-class-properties'],
+							['@babel/plugin-transform-runtime'],
+							['@babel/plugin-transform-modules-commonjs'],
+							['@babel/plugin-proposal-optional-chaining'],
 						],
 					},
 				},
@@ -99,8 +99,8 @@ const moduleRules = {
 };
 
 const entry = {
-	'js/admin/pageflash-admin': path.resolve( __dirname, './src/js/admin/pageflash-admin.js' ),
-	'js/frontend/pageflash-frontend': path.resolve( __dirname, './src/js/frontend/pageflash-frontend.js' ),
+	'js/admin/pageflash-admin': path.resolve(__dirname, './src/js/admin/pageflash-admin.js'),
+	'js/frontend/pageflash-frontend': path.resolve(__dirname, './src/js/frontend/pageflash-frontend.js'),
 };
 
 const webpackConfig = {
@@ -110,7 +110,7 @@ const webpackConfig = {
 	entry,
 	mode: 'development',
 	output: {
-		path: path.resolve( __dirname, './build/assets/' ),
+		path: path.resolve(__dirname, './build/assets/'),
 		filename: '[name].js',
 		devtoolModuleFilenameTemplate: './[resource]',
 	},
@@ -126,56 +126,56 @@ const webpackProductionConfig = {
 	optimization: {
 		minimize: true,
 		minimizer: [
-			new TerserPlugin( {
+			new TerserPlugin({
 				terserOptions: {
 					keep_fnames: true,
 				},
 				include: /\.min\.js$/,
-				exclude : /\.min\.js\.map$/
-			} ),
+				exclude: /\.min\.js\.map$/
+			}),
 		],
 	},
 	mode: 'production',
 	output: {
-		path: path.resolve( __dirname, './build/assets/' ),
+		path: path.resolve(__dirname, './build/assets/'),
 		filename: '[name].js',
 	},
 	performance: { hints: false },
 };
 
 // Add minified entry points
-Object.entries( webpackProductionConfig.entry ).forEach( ( [ wpEntry, value ] ) => {
-	webpackProductionConfig.entry[ wpEntry + '.min' ] = value;
+Object.entries(webpackProductionConfig.entry).forEach(([wpEntry, value]) => {
+	webpackProductionConfig.entry[wpEntry + '.min'] = value;
 
-	delete webpackProductionConfig.entry[ wpEntry ];
-} );
+	delete webpackProductionConfig.entry[wpEntry];
+});
 
-const localOutputPath = { ...webpackProductionConfig.output, path: path.resolve( __dirname, './assets' ) };
+const localOutputPath = { ...webpackProductionConfig.output, path: path.resolve(__dirname, './assets') };
 
-module.exports = ( env ) => {
-	if ( env.developmentLocalWithWatch ) {
+module.exports = (env) => {
+	if (env.developmentLocalWithWatch) {
 		return { ...webpackConfig, plugins: [new CopyPlugin(commonConfig)], watch: true, devtool: 'source-map', output: localOutputPath };
 	}
 
-	if ( env.productionLocalWithWatch ) {
+	if (env.productionLocalWithWatch) {
 		return { ...webpackProductionConfig, watch: true, devtool: 'source-map', output: localOutputPath };
 	}
 
-	if ( env.productionLocal ) {
+	if (env.productionLocal) {
 		return { ...webpackProductionConfig, devtool: 'source-map', output: localOutputPath };
 	}
 
-	if ( env.developmentLocal ) {
+	if (env.developmentLocal) {
 		return { ...webpackConfig, plugins: [new CopyPlugin(commonConfig)], devtool: 'source-map', output: localOutputPath };
 	}
 
-	if ( env.production ) {
+	if (env.production) {
 		return webpackProductionConfig;
 	}
 
-	if ( env.development ) {
+	if (env.development) {
 		return { ...webpackConfig, plugins: [new CopyPlugin(mergedConfig)] };
 	}
 
-	throw new Error( 'missing or invalid --env= development/production/developmentWithWatch/productionWithWatch' );
+	throw new Error('missing or invalid --env= development/production/developmentWithWatch/productionWithWatch');
 };

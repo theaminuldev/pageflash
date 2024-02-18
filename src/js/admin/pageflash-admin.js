@@ -9,72 +9,72 @@ $(function ($) {
 	 */
 
 	// Initiate Color Picker
-	$(".wp-color-picker-field").wpColorPicker();
+	$('.wp-color-picker-field').wpColorPicker();
 
 	// Switches option sections
-	$(".group").hide();
-	var activeTab = "";
-	if (typeof localStorage !== "undefined") {
-		activeTab = localStorage.getItem("activetab");
+	$('.group').hide();
+	var activeTab = '';
+	if (typeof localStorage !== 'undefined') {
+		activeTab = localStorage.getItem('activetab');
 	}
-	if (activeTab !== "" && $(activeTab).length) {
+	if (activeTab !== '' && $(activeTab).length) {
 		$(activeTab).fadeIn();
 	} else {
-		$(".group:first").fadeIn();
+		$('.group:first').fadeIn();
 	}
-	$(".group .collapsed").each(function () {
+	$('.group .collapsed').each(function () {
 		$(this)
-			.find("input:checked")
+			.find('input:checked')
 			.parent()
 			.parent()
 			.parent()
 			.nextAll()
 			.each(function () {
-				if ($(this).hasClass("last")) {
-					$(this).removeClass("hidden");
+				if ($(this).hasClass('last')) {
+					$(this).removeClass('hidden');
 					return false;
 				}
-				$(this).filter(".hidden").removeClass("hidden");
+				$(this).filter('.hidden').removeClass('hidden');
 			});
 	});
 
-	if (activeTab !== "" && $(activeTab + "-tab").length) {
-		$(activeTab + "-tab").addClass("nav-tab-active");
+	if (activeTab !== '' && $(activeTab + '-tab').length) {
+		$(activeTab + '-tab').addClass('nav-tab-active');
 	} else {
-		$(".nav-tab-wrapper a:first").addClass("nav-tab-active");
+		$('.nav-tab-wrapper a:first').addClass('nav-tab-active');
 	}
 
-	$(".nav-tab-wrapper a").on("click", function (evt) {
+	$('.nav-tab-wrapper a').on('click', function (evt) {
 
-		$(".nav-tab-wrapper a").removeClass("nav-tab-active");
-		$(this).addClass("nav-tab-active").trigger("blur");
-		var clickedGroup = $(this).attr("href");
-		if (typeof localStorage !== "undefined") {
-			localStorage.setItem("activetab", $(this).attr("href"));
+		$('.nav-tab-wrapper a').removeClass('nav-tab-active');
+		$(this).addClass('nav-tab-active').trigger('blur');
+		var clickedGroup = $(this).attr('href');
+		if (typeof localStorage !== 'undefined') {
+			localStorage.setItem('activetab', $(this).attr('href'));
 		}
-		$(".group").hide();
+		$('.group').hide();
 		$(clickedGroup).fadeIn();
 		evt.preventDefault();
-		
+
 	});
 
-	$(".wpsa-browse").on("click", function (event) {
+	$('.wpsa-browse').on('click', function (event) {
 		event.preventDefault();
 
 		var self = $(this);
 
 		// Create the media frame.
 		var fileFrame = (wp.media.frames.fileFrame = wp.media({
-			title: self.data("uploader_title"),
+			title: self.data('uploader_title'),
 			button: {
-				text: self.data("uploader_button_text"),
+				text: self.data('uploader_button_text'),
 			},
 			multiple: false,
 		}));
 
-		fileFrame.on("select", function () {
-			attachment = fileFrame.state().get("selection").first().toJSON();
-			self.prev(".wpsa-url").val(attachment.url);
+		fileFrame.on('select', function () {
+			attachment = fileFrame.state().get('selection').first().toJSON();
+			self.prev('.wpsa-url').val(attachment.url);
 		});
 
 		// Finally, open the modal
