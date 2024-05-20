@@ -1,6 +1,6 @@
 <?php
 namespace PageFlash\Admin;
-use PageFlash\Helper\PageFlashSettingsAPI;
+use PageFlash\Helper\Settings;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
@@ -25,7 +25,7 @@ class MetaBox {
      * @access public
      */
     public function __construct() {
-        $this->settings_api = new PageFlashSettingsAPI();
+        $this->settings_api = new Settings();
 
         add_action('admin_init', array($this, 'pageflash_admin_init'));
         add_action('admin_menu', array($this, 'pageflash_admin_menu'));

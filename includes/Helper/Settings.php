@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
  * @src https://github.com/tareq1988/wordpress-settings-api-class
  */
 
- class PageFlashSettingsAPI {
+ class Settings {
 
     /**
      * Settings sections array
