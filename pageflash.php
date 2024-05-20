@@ -4,8 +4,8 @@
 	Plugin URI: https://github.com/theaminuldev/pageflash
 	Author: theaminul
 	Author URI: theaminul.com
-	Version: 1.0.0
-	Stable tag: 1.0.0
+	Version: 1.0.1
+	Stable tag: 1.0.1
 	Requires at least: 5.9
 	Tested up to: 6.4
 	Requires PHP: 7.4
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'PAGEFLASH_VERSION', '1.0.0' );
+define( 'PAGEFLASH_VERSION', '1.0.1' );
 define( 'PAGEFLASH__FILE__', __FILE__ );
 define( 'PAGEFLASH_PLUGIN_BASE', plugin_basename( PAGEFLASH__FILE__ ) );
 define( 'PAGEFLASH_PATH', plugin_dir_path( PAGEFLASH__FILE__ ) );

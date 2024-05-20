@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 
 import * as quicklink from 'quicklink';
@@ -163,80 +164,3 @@ function prefetchUrls(settings) {
 		pageflash.prefetch(settings.urls);
 	}
 }
-
-/**
- * localStorage configure for PageFlash.
- * @param {string} key - localStorage key.
- * @param {string} value - localStorage value.
- * @since PageFlash 1.0.0
- * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
- * @todo
- * - Add support for session storage
- * - Add support for localStorage
- */
-
-window.addEventListener('load', () => {
-	const uniqueUrls = new Set();
-
-	const observeLinks = () => {
-		return new Promise((resolve, reject) => {
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const link = entry.target;
-						const url = link.href;
-						const regex = /#.*$/;
-						const cleanURL = url.replace(regex, '');
-						if (!uniqueUrls.has(cleanURL)) {
-							uniqueUrls.add(cleanURL);
-						}
-					}
-				});
-			});
-
-			document.querySelectorAll('a').forEach((link) => {
-				observer.observe(link);
-			});
-
-			// Resolve the Promise after a delay to allow some URLs to be detected initially
-			setTimeout(() => {
-				resolve(uniqueUrls);
-			}, 100);
-		});
-	};
-
-
-	const storage = (urls) => {
-		urls.forEach((url) => {
-			const xhr = new XMLHttpRequest();
-			xhr.open('GET', url, true);
-			xhr.onload = function () {
-				if (xhr.readyState === 4 && xhr.status === 200) {
-					// Store the response text in local storage
-					// console.log(localStorage.getItem(url) === xhr.responseText);
-					localStorage.setItem(url, xhr.responseText);
-				} else {
-					console.error(xhr.responseText);
-				}
-			};
-			xhr.send(null);
-		});
-	};
-
-
-	const scrollHandler = () => {
-		observeLinks().then((updatedUniqueUrls) => {
-			console.log(updatedUniqueUrls);
-			// storage(updatedUniqueUrls);
-		});
-	};
-	// Add scroll event listener to continuously observe links while scrolling
-	window.addEventListener('scroll', scrollHandler);
-
-	// Initial observation on page load
-	observeLinks().then((initialUniqueUrls) => {
-		console.log(initialUniqueUrls);
-		// storage(initialUniqueUrls);
-	});
-
-});

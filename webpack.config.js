@@ -100,7 +100,7 @@ const moduleRules = {
 
 const entry = {
 	'js/admin/pageflash-admin': path.resolve(__dirname, './src/js/admin/pageflash-admin.js'),
-	'js/frontend/pageflash-frontend': path.resolve(__dirname, './src/js/frontend/pageflash-frontend.js'),
+	'js/frontend/pageflash-frontend': path.resolve(__dirname, './src/js/frontend/index.js'),
 };
 
 const webpackConfig = {
@@ -150,23 +150,46 @@ Object.entries(webpackProductionConfig.entry).forEach(([wpEntry, value]) => {
 	delete webpackProductionConfig.entry[wpEntry];
 });
 
-const localOutputPath = { ...webpackProductionConfig.output, path: path.resolve(__dirname, './assets') };
+const localOutputPath = {
+	...webpackProductionConfig.output,
+	path: path.resolve(__dirname, './assets')
+};
 
 module.exports = (env) => {
 	if (env.developmentLocalWithWatch) {
-		return { ...webpackConfig, plugins: [new CopyPlugin(commonConfig)], watch: true, devtool: 'source-map', output: localOutputPath };
+		return {
+			...webpackConfig,
+			plugins: [new CopyPlugin(commonConfig)],
+			watch: true,
+			devtool: 'source-map',
+			output: localOutputPath
+		};
 	}
 
 	if (env.productionLocalWithWatch) {
-		return { ...webpackProductionConfig, watch: true, devtool: 'source-map', output: localOutputPath };
+		return {
+			...webpackProductionConfig,
+			watch: true,
+			devtool: 'source-map',
+			output: localOutputPath
+		};
 	}
 
 	if (env.productionLocal) {
-		return { ...webpackProductionConfig, devtool: 'source-map', output: localOutputPath };
+		return {
+			...webpackProductionConfig,
+			devtool: 'source-map',
+			output: localOutputPath
+		};
 	}
 
 	if (env.developmentLocal) {
-		return { ...webpackConfig, plugins: [new CopyPlugin(commonConfig)], devtool: 'source-map', output: localOutputPath };
+		return {
+			...webpackConfig,
+			plugins: [new CopyPlugin(commonConfig)],
+			devtool: 'source-map',
+			output: localOutputPath
+		};
 	}
 
 	if (env.production) {
@@ -174,7 +197,10 @@ module.exports = (env) => {
 	}
 
 	if (env.development) {
-		return { ...webpackConfig, plugins: [new CopyPlugin(mergedConfig)] };
+		return {
+			...webpackConfig,
+			plugins: [new CopyPlugin(mergedConfig)]
+		};
 	}
 
 	throw new Error('missing or invalid --env= development/production/developmentWithWatch/productionWithWatch');
