@@ -2,8 +2,8 @@
 Contributors: theaminuldev
 Tags: headless browser, prefetches, quicklink, performance, speed, prefetch, pageflash, optimization, javascript, quickload, speculation rules, prerender
 Requires at least: 6.0
-Tested up to: 6.4.2
-Stable tag: 1.0.1
+Tested up to: 6.5.5
+Stable tag: 1.1.0
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Copyright: © 2023 theaminul.com
@@ -75,6 +75,9 @@ Yes, PageFlash is regularly tested and ensured to be compatible with the latest 
 1. [Screenshot 1](https://github.com/theaminuldev/pageflash/src/images/screenshot.png): Describe the screenshot here.
 
 == Changelog ==
+= 1.1.0 =
+* Fixed: Supply chain attack prevention
+
 = 1.0.1 =
 * Fixed: Issue with validateElement function in `pageflash-frontend`
 * Improved: Added validation for timeoutFn in buildListenerOptions function
