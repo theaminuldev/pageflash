@@ -52,28 +52,6 @@ class AssetsManager {
             PAGEFLASH_VERSION,
             true
         );
-
-		/**
-		* Register the Intersection Observer polyfill script with quicklink as a dependency
-		* This script enhances compatibility for the Intersection Observer API across browsers.
-		* It's primarily used to detect when an element enters the viewport, enabling lazy loading
-		* and other interaction-based functionalities.
-		*
-		* @since PageFlash 1.0.1
-		* @see https://github.com/GoogleChromeLabs/intersection-observer for the polyfill source.
-		*
-		* @param WP_Scripts $scripts The WP_Scripts object to add the script to. Typically, this is
-		*                            managed globally by WordPress, and scripts are added in theme or
-		*                            plugin files.
-		*/
-
-		$scripts->add(
-			'intersection-observer',
-			PAGEFLASH_ASSETS_URL . 'libs/intersection-observer/intersection-observer.js',
-			[],
-			'0.12.2',
-			true
-		);
         return $scripts;
     }
 
@@ -98,12 +76,6 @@ class AssetsManager {
 
         wp_enqueue_script( 'pageflash-frontend');
         // wp_enqueue_script('pageflash-quicklink');
-
-		/**
-		 * Enqueue the Intersection Observer polyfill script
-		 * This automatically enqueues quicklink as well due to the dependency
-		 */
-		wp_enqueue_script('intersection-observer');
     }
     
     /**

@@ -4,10 +4,10 @@
 	Plugin URI: https://github.com/theaminuldev/pageflash
 	Author: theaminul
 	Author URI: theaminul.com
-	Version: 1.0.1
-	Stable tag: 1.0.1
-	Requires at least: 5.9
-	Tested up to: 6.4
+	Version: 1.1.0
+	Stable tag: 1.1.0
+	Requires at least: 6.0
+	Tested up to: 6.5.5
 	Requires PHP: 7.4
 	License: GNU General Public License v3 or later.
 	License URI: https://www.gnu.org/licenses/gpl-3.0.html
