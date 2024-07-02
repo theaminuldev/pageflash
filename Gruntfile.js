@@ -3,33 +3,33 @@
  */
 'use strict';
 
-module.exports = function( grunt ) {
-	require( 'load-grunt-tasks' )( grunt );
+module.exports = function (grunt) {
+	require('load-grunt-tasks')(grunt);
 
-	const sass = require( 'sass' );
+	const sass = require('sass');
 
 	// Project configuration.
-	grunt.initConfig( {
-		pkg: grunt.file.readJSON( 'package.json' ),
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
 
 		sass: {
 			options: {
 				implementation: sass,
 			},
 			dist: {
-				files: 'production' === grunt.option( 'environment' ) ? [ {
+				files: 'production' === grunt.option('environment') ? [{
 					expand: true,
 					cwd: 'src/scss',
 					src: '*.scss',
 					dest: './build/assets/css',
 					ext: '.css',
-				} ] : [ {
+				}] : [{
 					expand: true,
 					cwd: 'src/scss',
 					src: '*.scss',
 					dest: './assets/css',
 					ext: '.css',
-				} ],
+				}],
 			},
 		},
 
@@ -39,29 +39,29 @@ module.exports = function( grunt ) {
 					//map: true,
 
 					processors: [
-						require( 'autoprefixer' )(),
+						require('autoprefixer')(),
 					],
 				},
-				files: [ {
+				files: [{
 					src: [
 						'*.css',
 						'!*.min.css',
 					],
-				} ],
+				}],
 			},
 			minify: {
 				options: {
 					processors: [
-						require( 'autoprefixer' )(),
-						require( 'cssnano' )( {
+						require('autoprefixer')(),
+						require('cssnano')({
 							reduceIdents: false,
 							zindex: false,
-						} ),
+						}),
 					],
 				},
-				files: [ {
+				files: [{
 					expand: true,
-					src: 'production' === grunt.option( 'environment' ) ? [
+					src: 'production' === grunt.option('environment') ? [
 						'build/assets/css/*.css',
 						'!build/assets/css/*.min.css',
 					] : [
@@ -69,7 +69,7 @@ module.exports = function( grunt ) {
 						'!*.min.css',
 					],
 					ext: '.min.css',
-				} ],
+				}],
 			},
 		},
 
@@ -78,7 +78,7 @@ module.exports = function( grunt ) {
 				files: [
 					'src/scss/**/*.scss',
 				],
-				tasks: [ 'styles' ],
+				tasks: ['styles'],
 			},
 		},
 
@@ -119,20 +119,20 @@ module.exports = function( grunt ) {
 				expand: true,
 			},
 		},
-	} );
+	});
 
-	grunt.registerTask( 'i18n', [
+	grunt.registerTask('i18n', [
 		'checktextdomain',
-	] );
+	]);
 
-	grunt.registerTask( 'styles', [
+	grunt.registerTask('styles', [
 		'sass',
 		'postcss',
-	] );
+	]);
 
 	// Default task(s).
-	grunt.registerTask( 'default', [
+	grunt.registerTask('default', [
 		'i18n',
 		'styles',
-	] );
+	]);
 };

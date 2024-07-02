@@ -1,6 +1,6 @@
 <?php
 namespace PageFlash\Admin;
-use PageFlash\Helper\PageFlashSettingsAPI;
+use PageFlash\Helper\Settings;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
@@ -8,9 +8,9 @@ if (!defined('ABSPATH')) {
 
 /**
  * PageFlash Admin Class.
- *
+ * 
  * This class handles the administration-related functionality for the PageFlash plugin.
- *
+ * @see https://github.com/tareq1988/wordpress-settings-api-class
  * @package PageFlash
  * @since PageFlash 1.0.0
  */
@@ -25,7 +25,7 @@ class MetaBox {
      * @access public
      */
     public function __construct() {
-        $this->settings_api = new PageFlashSettingsAPI();
+        $this->settings_api = new Settings();
 
         add_action('admin_init', array($this, 'pageflash_admin_init'));
         add_action('admin_menu', array($this, 'pageflash_admin_menu'));
