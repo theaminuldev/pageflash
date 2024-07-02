@@ -1,9 +1,9 @@
 === PageFlash - Fast and Efficient Headless Browser WordPress Plugin ===
 Contributors: theaminuldev
-Tags: headless browser, pageflash, prefetches, quicklink, quickload, performance, speed, fast, prefetch, seo preconnect, optimization
+Tags: headless browser, prefetches, quicklink, performance, speed, prefetch, pageflash, optimization, javascript, quickload, speculation rules, prerender
 Requires at least: 6.0
-Tested up to: 6.4.2
-Stable tag: 1.0.1
+Tested up to: 6.5.5
+Stable tag: 1.1.0
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Copyright: © 2023 theaminul.com
@@ -53,24 +53,31 @@ This plugin also works perfectly on popular browsers.
 3. Click "Install Now" and then "Activate."
 
 == Frequently Asked Questions ==
-1. **How do I enable PageFlash for a specific post or page?**
-   After activation, go to the post or page where you want to enable PageFlash's headless browsing features. In the editor, look for the PageFlash settings panel to configure your preferences.
 
-2. **Where should I check the plugin's features?**
-   - A. In Chrome's incognito mode
-   - B. After logging out of the admin account
-   - C. In Firefox's private browsing mode
-   - D. In Safari's private browsing mode
-   The best places to check the plugin's features are either in Chrome's incognito mode (Option A) or after logging out of the admin account (Option B). These methods ensure that the plugin works correctly without any interference from browser history, cookies, or admin privileges.
+= How do I enable PageFlash for a specific post or page? =
 
-3. **Is PageFlash compatible with the latest version of WordPress?**
-   Yes, PageFlash is regularly tested and ensured to be compatible with the latest WordPress version.
+After activation, go to the post or page where you want to enable PageFlash's headless browsing features. In the editor, look for the PageFlash settings panel to configure your preferences.
+
+= Where should I check the plugin's features? =
+
+- A. In Chrome's incognito mode.
+- B. After logging out of the admin account.
+- C. In Firefox's private browsing mode.
+- D. In Safari's private browsing mode.
+The best places to check the plugin's features are either in Chrome's incognito mode (Option A) or after logging out of the admin account (Option B). These methods ensure that the plugin works correctly without any interference from browser history, cookies, or admin privileges.
+
+= Is PageFlash compatible with the latest version of WordPress? =
+
+Yes, PageFlash is regularly tested and ensured to be compatible with the latest WordPress version.
 
 
 == Screenshots ==
 1. [Screenshot 1](https://github.com/theaminuldev/pageflash/src/images/screenshot.png): Describe the screenshot here.
 
 == Changelog ==
+= 1.1.0 =
+* Fixed: Supply chain attack prevention
+
 = 1.0.1 =
 * Fixed: Issue with validateElement function in `pageflash-frontend`
 * Improved: Added validation for timeoutFn in buildListenerOptions function

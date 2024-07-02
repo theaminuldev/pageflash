@@ -8,9 +8,9 @@ if (!defined('ABSPATH')) {
 
 /**
  * PageFlash Admin Class.
- *
+ * 
  * This class handles the administration-related functionality for the PageFlash plugin.
- *
+ * @see https://github.com/tareq1988/wordpress-settings-api-class
  * @package PageFlash
  * @since PageFlash 1.0.0
  */

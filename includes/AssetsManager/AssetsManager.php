@@ -17,7 +17,7 @@ class AssetsManager {
     public function __construct() {
         // Constructor code
         // Define asset loading and registration here
-        add_action('wp_default_scripts', array($this, 'pageflash_frontend_assets_script'));
+        add_action('wp_default_scripts', array($this, 'pageflash_wp_default_scripts'));
         add_action('wp_enqueue_scripts', array($this, 'pageflash_frontend_assets'));
         add_action('admin_enqueue_scripts', array($this, 'pageflash_admin_enqueue_scripts'));
     }
@@ -31,7 +31,7 @@ class AssetsManager {
      * @return void
      * @since PageFlash 1.0.0
      */
-    public function pageflash_frontend_assets_script($scripts){
+    public function pageflash_wp_default_scripts($scripts){
         $min_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
         $quicklink_version = defined( 'PAGEFLASH_VERSION' ) && empty(PAGEFLASH_VERSION) ? '' : '2.3.0';
     
