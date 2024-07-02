@@ -1,6 +1,6 @@
 === PageFlash - Fast and Efficient Headless Browser WordPress Plugin ===
 Contributors: theaminuldev
-Tags: headless browser, prefetches, quicklink, performance, speed, prefetch, pageflash, optimization, javascript, quickload, speculation rules, prerender
+Tags: headless browser, quicklink, performance, speed, speculation rules
 Requires at least: 6.0
 Tested up to: 6.5.5
 Stable tag: 1.1.0
