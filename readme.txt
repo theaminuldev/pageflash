@@ -75,6 +75,9 @@ Yes, PageFlash is regularly tested and ensured to be compatible with the latest 
 1. [Screenshot 1](https://github.com/theaminuldev/pageflash/src/images/screenshot.png): Describe the screenshot here.
 
 == Changelog ==
+= 1.1.0 =
+* Added: `IntersectionObserver` test files and dependencies to enhance testing capabilities and supply chain attack prevention
+
 = 1.0.1 =
 * Fixed: Issue with validateElement function in `pageflash-frontend`
 * Improved: Added validation for timeoutFn in buildListenerOptions function
